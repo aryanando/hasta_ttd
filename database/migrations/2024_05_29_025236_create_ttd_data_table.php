@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('ttd_data', function (Blueprint $table) {
             $table->id();
+            $table->text('nosurat')->nullable();
+            $table->text('ttd')->nullable();
+            $table->text('waktu')->nullable();
             $table->timestamps();
         });
     }

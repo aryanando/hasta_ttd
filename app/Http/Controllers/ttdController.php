@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TtdDataModel;
 use Illuminate\Http\Request;
 
 class ttdController extends Controller
@@ -9,6 +10,7 @@ class ttdController extends Controller
     //
 
     public function index() {
-        return view('ttd_dashboard');
+        $data['full'] = (TtdDataModel::all());
+        return view('ttd_dashboard', $data);
     }
 }

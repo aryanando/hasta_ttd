@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class TtdDataModel extends Model
 {
     use HasFactory;
-
+    protected $table = 'ttd_data';
     
 }
