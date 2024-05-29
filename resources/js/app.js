@@ -1,6 +1,8 @@
 import './bootstrap';
 
-import QRCode from 'qrcode'
+import QRCode from "qrcode-with-logos";
 import DataTable from 'datatables.net-bs5';
-window.qrcode = QRCode;
+import moment from 'moment';
+window.QrCodeWithLogo = QRCode;
 window.datatable = DataTable;
+window.moment = moment;

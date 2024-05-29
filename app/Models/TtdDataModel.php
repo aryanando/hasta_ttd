@@ -9,5 +9,6 @@ class TtdDataModel extends Model
 {
     use HasFactory;
     protected $table = 'ttd_data';
+    protected $fillable = ['nosurat','ttd','waktu','unique_id'];
     
 }
