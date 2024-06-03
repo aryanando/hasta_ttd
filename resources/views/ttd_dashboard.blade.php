@@ -146,7 +146,7 @@
                             @else
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal"
-                                    onclick="generateQR('{{ url('sprin') . '/' . $ttd['unique_id'] }}')">
+                                    onclick="generateQR('{{ url('v2/sprin') . '/' . $ttd['unique_id'] }}')">
                                     QR
                                 </button>
                                 <button type="button" class="btn btn-success"
