@@ -128,7 +128,7 @@
                 @foreach ($full as $key => $ttd)
                     <tr>
                         <td scope="row">{{ ++$key }}</td>
-                        <td>{{ $ttd['nosurat'] }}</td>
+                        <td>{{ $ttd['nosurat'] }} {!! ($key == 1) ? '<span class="badge bg-success">Terbaru</span>' : '' !!}</td>
                         <td>{{ $ttd['ttd'] }}</td>
                         <td>{{ $ttd['waktu'] }}</td>
                         <td>

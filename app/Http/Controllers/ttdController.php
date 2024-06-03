@@ -10,7 +10,7 @@ class ttdController extends Controller
     //
 
     public function index() {
-        $data['full'] = (TtdDataModel::all());
+        $data['full'] = (TtdDataModel::orderBy('id', 'DESC')->get());
         return view('ttd_dashboard', $data);
     }
 
