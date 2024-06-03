@@ -5,41 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
     @vite(['resources/js/app.js', 'resources/sass/app.scss'])
     <title>Document</title>
 </head>
 
 <body>
 
-    <script type="text/javascript">
-        function greetFromHtml() {
-            alert("Hello");
-        }
-        const module = {};
-    </script>
-    <script type="module">
-        function generateQR(ttd) {
-            let qrcode = new QrCodeWithLogo({
-                canvas: document.getElementById("canvas"),
-                content: `${ttd}`,
-                width: 380,
-                download: false,
-                image: document.getElementById("image"),
-                logo: {
-                    src: "{{ url('assets/img/logo.png') }}"
-                }
-            });
 
-            qrcode.toCanvas().then(() => {
-                qrcode.toImage().then(() => {
-                    // qrcode.downloadImage("hello world");
-                });
-            });
-        }
-
-        module.generateQR = generateQR;
-        new datatable('#dataTTD');
-    </script>
     <div class="container">
         @if (Session::has('message'))
             <p class="alert alert-info">{{ Session::get('message') }}</p>
@@ -71,7 +44,8 @@
                                 Sp.OG(K) / NRP 84071828</option>
                             <option value="BRIPKA Agus Purwanto / NRP 77081143">BRIPKA Agus Purwanto / NRP 77081143
                             </option>
-                            <option value="BRIPKA Gandi Ari Setioko, Amd.Kep / NRP 89100114">BRIPKA Gandi Ari Setioko, Amd.Kep / NRP 89100114</option>
+                            <option value="BRIPKA Gandi Ari Setioko, Amd.Kep / NRP 89100114">BRIPKA Gandi Ari Setioko,
+                                Amd.Kep / NRP 89100114</option>
                         </select>
                     </div>
                     <div class="mb-3 col-3">
@@ -108,7 +82,7 @@
                             @if ($ttd['id'] < 1000)
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal"
-                                    onclick="module.generateQR('{{ url('sprin') . '/' . $ttd['id'] }}')">
+                                    onclick="generateQR('{{ url('sprin') . '/' . $ttd['id'] }}')">
                                     QR
                                 </button>
                                 <button type="button" class="btn btn-success"
@@ -118,7 +92,7 @@
                             @else
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal"
-                                    onclick="module.generateQR('{{ url('sprin') . '/' . $ttd['unique_id'] }}')">
+                                    onclick="generateQR('{{ url('sprin') . '/' . $ttd['unique_id'] }}')">
                                     QR
                                 </button>
                                 <button type="button" class="btn btn-success"
@@ -153,7 +127,7 @@
                 <div class="modal-body">
                     <div class="modal-body">
                         <div class="d-flex justify-content-center">
-                            <canvas id="canvas"></canvas>
+                            <div id="canvas"></div>
                         </div>
                     </div>
                 </div>
@@ -164,8 +138,42 @@
         </div>
     </div>
 
+    <script type="text/javascript">
+        function generateQR(ttd) {
+            const qrCode = new QRCodeStyling({
+                width: 300,
+                height: 300,
+                type: "svg",
+                data: `${ttd}`,
+                image: "{{ url('assets/img/logo.png') }}",
+                dotsOptions: {},
+                backgroundOptions: {
+                    color: "#ffffff",
+                },
+                imageOptions: {
+                    crossOrigin: "anonymous",
+                    margin: 10
+                }
+            });
+            console.log("Alh");
+            // qrCode.download({
+            //     name: "qr",
+            //     extension: "png"
+            // });
+            qrCode.append(document.getElementById("canvas"));
+        }
+        const modal = document.getElementById('exampleModal')
+        const canvasQR = document.getElementById('canvas')
 
+        modal.addEventListener('hidden.bs.modal', () => {
+            console.log('hide instance method called!');
+            canvasQR.innerHTML = "";
+        })
 
+    </script>
+    <script type="module">
+        new datatable('#dataTTD');
+    </script>
 </body>
 
 </html>
