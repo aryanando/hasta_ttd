@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
     @vite(['resources/js/app.js', 'resources/sass/app.scss'])
-    <title>Document</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
 
 <body>
