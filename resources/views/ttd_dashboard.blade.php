@@ -198,7 +198,7 @@
             const qrCode = new QRCodeStyling({
                 width: 300,
                 height: 300,
-                type: "svg",
+                type: "canvas",
                 data: `${ttd}`,
                 image: "{{ url('assets/img/logo.png') }}",
                 dotsOptions: {},
@@ -211,10 +211,6 @@
                 }
             });
             console.log("Alh");
-            // qrCode.download({
-            //     name: "qr",
-            //     extension: "png"
-            // });
             qrCode.append(document.getElementById("canvas"));
         }
         const modal = document.getElementById('exampleModal')
