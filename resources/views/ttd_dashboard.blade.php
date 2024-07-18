@@ -103,10 +103,10 @@
                         </select>
                     </div>
                     <div class="mb-3 col-3">
-                        <label for="InputTanggalSurat" class="form-label">Tanggal</label>
+                        <label for="InputTanggalSurat" class="form-label">Tanggal (Optional)</label>
                         <input name="waktu" type="datetime-local" class="form-control" id="InputTanggalSurat"
                             aria-describedby="InputTanggalSuratHelp">
-                        <div id="InputTanggalSuratHelp" class="form-text">Pilih tanggal.</div>
+                        <div id="InputTanggalSuratHelp" class="form-text">Pilih tanggal.</div> 
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-success">Simpan</button>
