@@ -20,7 +20,7 @@ class ttdController extends Controller
         $validatedData = $postData->validate([
             'nosurat' => 'required|string|unique:ttd_data',
             'ttd' => 'required|string',
-            'waktu' => 'required|string',
+            // 'waktu' => 'string',
         ]);
 
         //create post
