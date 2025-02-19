@@ -17,8 +17,8 @@
                 {{ config('app.name', 'Laravel') }}
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -44,6 +44,10 @@
                             </li>
                         @endif
                     @else
+                        <button type="button" class="btn btn-light"
+                            onclick="window.location.href='{{ route('kwitansi-dokter-dashboard') }}'">
+                            <i class="fa fa-receipt"></i> Kwitansi Dokter
+                        </button>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -106,7 +110,7 @@
                         <label for="InputTanggalSurat" class="form-label">Tanggal (Optional)</label>
                         <input name="waktu" type="datetime-local" class="form-control" id="InputTanggalSurat"
                             aria-describedby="InputTanggalSuratHelp">
-                        <div id="InputTanggalSuratHelp" class="form-text">Pilih tanggal.</div> 
+                        <div id="InputTanggalSuratHelp" class="form-text">Pilih tanggal.</div>
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-success">Simpan</button>
@@ -128,7 +132,7 @@
                 @foreach ($full as $key => $ttd)
                     <tr>
                         <td scope="row">{{ ++$key }}</td>
-                        <td>{{ $ttd['nosurat'] }} {!! ($key == 1) ? '<span class="badge bg-success">Terbaru</span>' : '' !!}</td>
+                        <td>{{ $ttd['nosurat'] }} {!! $key == 1 ? '<span class="badge bg-success">Terbaru</span>' : '' !!}</td>
                         <td>{{ $ttd['ttd'] }}</td>
                         <td>{{ $ttd['waktu'] }}</td>
                         <td>

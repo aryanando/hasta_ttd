@@ -36,3 +36,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 import DataTable from 'datatables.net-bs5';
 
 window.datatable = DataTable;
+
+import SignaturePad from 'signature_pad';
+
+window.SignaturePad = SignaturePad;
+
+import html2canvas from 'html2canvas';
+
+window.html2canvas = html2canvas;

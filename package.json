@@ -24,6 +24,7 @@
         "moment": "^2.30.1",
         "qrcode": "^1.5.3",
         "qrcode-with-logos": "^1.0.5",
+        "signature_pad": "^5.0.4",
         "vite-plugin-require": "^1.2.14",
         "vite-plugin-require-transform": "^1.0.21"
     }
