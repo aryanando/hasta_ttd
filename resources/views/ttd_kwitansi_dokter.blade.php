@@ -14,19 +14,23 @@
         <div id="receipt-box" class="p-3">
             <div class="receipt-box">
                 <div class="row">
-                    <!-- Left Side -->
-                    {{-- <div class="col-3 text-center vertical-text">
-                        <strong>RS BHAYANGKARA TK. III<br>HASTA BRATA BATU</strong>
-                    </div> --}}
 
                     <!-- Right Side -->
                     <div class="col">
-                        <div class="header mb-4">
-                            <h5 class="text-uppercase">
-                                <strong>KEPOLISIAN DAERAH JAWA TIMUR</strong> <br>
-                                <strong>BIDANG KEDOKTERAN DAN KESEHATAN</strong> <br>
-                                <strong>RS BHAYANGKARA TK.III HASTA BRATA BATU</strong>
-                            </h5>
+                        <div class="row align-items-center">
+                            <!-- Logo Section -->
+                            <div class="col-12 col-md-2 d-flex justify-content-md-end justify-content-center mb-3 mb-md-0 order-md-1">
+                                <img src="{{ asset('assets/img/logo.png') }}" alt="Company Logo" width="70">
+                            </div>
+
+                            <!-- Header Section -->
+                            <div class="col-12 col-md-10 text-center text-md-start order-md-2">
+                                <h5 class="text-uppercase">
+                                    <strong>KEPOLISIAN DAERAH JAWA TIMUR</strong> <br>
+                                    <strong>BIDANG KEDOKTERAN DAN KESEHATAN</strong> <br>
+                                    <strong>RS BHAYANGKARA TK.III HASTA BRATA BATU</strong>
+                                </h5>
+                            </div>
                         </div>
                         <table class="table table-borderless">
                             <tr>

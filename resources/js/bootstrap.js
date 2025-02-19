@@ -1,4 +1,4 @@
-import 'bootstrap';
+import * as bootstrap from 'bootstrap';
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -44,3 +44,5 @@ window.SignaturePad = SignaturePad;
 import html2canvas from 'html2canvas';
 
 window.html2canvas = html2canvas;
+
+window.bootstrap = bootstrap;

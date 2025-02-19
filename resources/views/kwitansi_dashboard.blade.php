@@ -12,6 +12,20 @@
 </head>
 
 <body>
+    @if (session('success'))
+        <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+            <div id="successToast" class="toast align-items-center text-white bg-success border-0" role="alert"
+                aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        {{ session('success') }}
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    @endif
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -123,18 +137,16 @@
                             <!-- Recipient Name (Dropdown) -->
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Penerima</label>
-                                <select id="penerima" name="recipient" class="form-select">
-                                    <option value="" selected disabled>Pilih Penerima</option>
-                                    <option value="Gigih Prasetyo">Gigih Prasetyo</option>
-                                    <option value="Andi Susanto">Andi Susanto</option>
-                                    <option value="Budi Raharjo">Budi Raharjo</option>
-                                    <option value="Dewi Kartika">Dewi Kartika</option>
-                                </select>
+                                <div class="autocomplete-container">
+                                    <input type="text" name="recipient" id="autocomplete-input"
+                                        class="form-control" placeholder="Search for a doctor or assistant...">
+                                    <div id="autocomplete-list" class="autocomplete-dropdown"></div>
+                                </div>
                             </div>
 
                             <!-- Submit Button (For Example Purpose) -->
                             <div class="text-center mt-3">
-                                <button type="submit" class="btn btn-primary">Cetak Kwitansi</button>
+                                <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
                         </form>
                     </div>
@@ -251,6 +263,110 @@
                 document.getElementById("terbilang").value = "Masukkan jumlah yang valid!";
             }
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Fade In and Fade Out Toast
+            const toastElement = document.getElementById("successToast");
+
+            if (toastElement) {
+                const toast = new bootstrap.Toast(toastElement, {
+                    delay: 3000
+                }); // Auto hide after 3 seconds
+                toast.show();
+            }
+
+            // Auto Complete Form
+            const doctorNames = [
+                "dr. ANANINGATI, Sp. OG (K)",
+                "dr. WIDJANARKO ANDANG, Sp.OG",
+                "dr. ARIFIAN JUARI, Sp. OG (K)",
+                "dr. BAMBANG RISHARDANA, Sp.B",
+                "dr. ANANTO SATYA PRADANA, SP. OT",
+                "dr. AGUNG RIYANTO BUDI SANTOSO, Sp. OT",
+                "dr. ANTON WURI HANDAYANTO, Sp.AN",
+                "dr. VILDA PRASASTRI YUWONO, Sp. AN",
+                "dr. TEGUH SETIADI, Sp. AN",
+                "dr. CANDRA, Sp. AN",
+                "dr. SEPTINA RAHAYU, Sp.U",
+                "dr. YOYOK SUBAGIO, Sp.BS",
+                "dr. REVITA WIDYA PRASANTI Sp.BP-RE",
+                "dr. JULIA WIDIATI, Sp.M",
+                "dr. FARIZ NUFIARWAN, Sp.M",
+                "dr. LINA PUSPITA HUTASOIT, Sp. M",
+                "dr. FARIDATUL JANNAH, Sp.THT",
+                "dr. EVELYN CHRISTINA, Sp.Rad",
+                "dr. FRANS JOHANNIS HUWAE, Msi. Med, Sp.A",
+                "dr. HAYKAL AFFANDI, Sp. A",
+                "dr. BERNANDUS ANGGARU, Sp.PD",
+                "dr. RACHMAD ARI IRMAWAN, Sp.PD",
+                "dr. DEDEN PERMANA , Sp.P",
+                "dr. LUCIA PUJIASTUTI, Sp.S",
+                "dr. FATHIA ANNIS PRAMESTI, Sp.S",
+                "dr. RINO PUJI DWI SUKMAWAN, Sp. KFR",
+                "dr. RAKA DWIMAREFFY HARO",
+                "dr. YEREMI DWI PURNOMO",
+                "dr. AGENG BAGUS SADEWO",
+                "dr. OLIVIA DEVINA PERMATA",
+                "dr. ANTONIA JUNITA DWIRAHMASARI",
+                "dr. ANITA RAHMAWATI",
+                "dr. DANY SATRIYA",
+                "dr. SULISWATI",
+                "dr. ZAHROTUL FITRIA",
+                "dr. NABILAH NOOR RABBANI",
+                "drg. HENDRA PUTRA SETYAWAN",
+                "drg. FRESYNANDIA KARYNEIS, Sp. KG",
+                "dr. NUR KAPUTRIN DWIGUSTININGRUM, Sp.JP(K)",
+                "dr. PRIMA URSILA, Sp.JP",
+                "dr. RASMI ADELAIDE INDAH JUWITA, Sp.KJ",
+                "dr. NURYATI, Sp.THT-BKL",
+                "dr. DEWANGGA, Sp.A",
+                "ASS BAMBANG SUGIARTO",
+                "ASS SUWIYARNO",
+                "ASS STEFANUS TAMIL",
+                "ASS PONIDAH",
+                "ASS GIGIH",
+                "ASS HELMI",
+                "ASS WILLEN",
+                "ASS MAYA",
+                "ASS EDI SUGIARTO",
+                "ASS PRIMA",
+                "ASS HENDRA",
+                "dr. KEMALA HAYATI, Sp.PK",
+                "dr. DEKA BAGUS BINARSA, Sp.F"
+            ];
+
+            const inputField = document.getElementById("autocomplete-input");
+            const suggestionsContainer = document.getElementById("autocomplete-list");
+
+            inputField.addEventListener("input", function() {
+                const inputValue = this.value.toLowerCase();
+                suggestionsContainer.innerHTML = "";
+
+                if (inputValue.length > 0) {
+                    const filteredNames = doctorNames.filter(name =>
+                        name.toLowerCase().includes(inputValue)
+                    );
+
+                    filteredNames.forEach(name => {
+                        const suggestion = document.createElement("div");
+                        suggestion.classList.add("autocomplete-suggestion");
+                        suggestion.textContent = name;
+                        suggestion.addEventListener("click", function() {
+                            inputField.value = name;
+                            suggestionsContainer.innerHTML = "";
+                        });
+                        suggestionsContainer.appendChild(suggestion);
+                    });
+                }
+            });
+
+            // Hide suggestions when clicking outside
+            document.addEventListener("click", function(e) {
+                if (!inputField.contains(e.target) && !suggestionsContainer.contains(e.target)) {
+                    suggestionsContainer.innerHTML = "";
+                }
+            });
+        });
     </script>
 </body>
 

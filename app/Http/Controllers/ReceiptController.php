@@ -10,7 +10,7 @@ class ReceiptController extends Controller
 {
     public function index()
     {
-        $receipts = Receipt::all();
+        $receipts = Receipt::orderBy('created_at', 'desc')->get();
         return view('receipts.index', compact('receipts'));
     }
 
@@ -45,7 +45,7 @@ class ReceiptController extends Controller
     public function destroy(Receipt $receipt)
     {
         $receipt->delete();
-        return redirect()->route('receipts.index')->with('success', 'Receipt deleted successfully!');
+        return redirect()->route('kwitansi-dokter-dashboard')->with('success', 'Receipt deleted successfully!');
     }
 
     public function showPublic($public_code)
