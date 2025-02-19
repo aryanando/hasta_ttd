@@ -152,7 +152,7 @@
                         <table id="dataKwitansi" class="table table-striped table-bordered">
                             <thead class="table-dark">
                                 <tr>
-                                    <th>Terima Dari</th>
+                                    <th>Penerima</th>
                                     <th>Jumlah (Rp)</th>
                                     <th>Tanggal</th>
                                     <th>Aksi</th>
@@ -161,14 +161,12 @@
                             <tbody>
                                 @foreach ($receipts as $receipt)
                                     <tr>
-                                        <td>{{ $receipt->received_from }}</td>
+                                        <td>{{ $receipt->recipient }}</td>
                                         <td>Rp {{ number_format($receipt->amount, 2, ',', '.') }}</td>
                                         <td>{{ $receipt->created_at->format('d-m-Y') }}</td>
                                         <td>
                                             <a href="{{ route('receipts.public', $receipt->public_code) }}"
                                                 target="_blank" class="btn btn-warning btn-sm">Public Link</a>
-                                            <a href="{{ route('receipts.show', $receipt->id) }}"
-                                                class="btn btn-info btn-sm">View</a>
                                             <form action="{{ route('receipts.destroy', $receipt->id) }}"
                                                 method="POST" class="d-inline">
                                                 @csrf
@@ -253,7 +251,6 @@
                 document.getElementById("terbilang").value = "Masukkan jumlah yang valid!";
             }
         }
-
     </script>
 </body>
 
