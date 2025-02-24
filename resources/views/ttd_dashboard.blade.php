@@ -44,10 +44,10 @@
                             </li>
                         @endif
                     @else
-                        <button type="button" class="btn btn-light"
+                        {{-- <button type="button" class="btn btn-light"
                             onclick="window.location.href='{{ route('kwitansi-dokter-dashboard') }}'">
                             <i class="fa fa-receipt"></i> Kwitansi Dokter
-                        </button>
+                        </button> --}}
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
