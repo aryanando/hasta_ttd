@@ -332,7 +332,8 @@
                 "ASS PRIMA",
                 "ASS HENDRA",
                 "dr. KEMALA HAYATI, Sp.PK",
-                "dr. DEKA BAGUS BINARSA, Sp.F"
+                "dr. DEKA BAGUS BINARSA, Sp.F",
+                "dr. CITRA DWI HARNINGTYAS, Sp.DV., M.Ked.Klin"
             ];
 
             const inputField = document.getElementById("autocomplete-input");
