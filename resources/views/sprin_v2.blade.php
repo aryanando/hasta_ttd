@@ -56,7 +56,7 @@
             return url('assets/img/pGandi.png');
         }
         elseif ($nama == 'BRIPDA Dwiki Maulana Abdullah, A.md.Kep / NRP 97110966') {
-            return url('assets/img/pGandi.png');
+            return url('assets/img/pDwiki.png');
         }
     }
 @endphp
