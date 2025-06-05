@@ -104,6 +104,7 @@
                             </option>
                             <option value="BRIPKA Gandi Ari Setioko, Amd.Kep / NRP 89100114">BRIPKA Gandi Ari Setioko,
                                 Amd.Kep / NRP 89100114</option>
+                            <option value="BRIPDA Dwiki Maulana Abdullah, A.md.Kep / NRP 97110966">BRIPDA Dwiki Maulana Abdullah, A.md.Kep / NRP 97110966</option>
                         </select>
                     </div>
                     <div class="mb-3 col-3">

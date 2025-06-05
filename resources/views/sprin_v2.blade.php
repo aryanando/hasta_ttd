@@ -55,5 +55,8 @@
         elseif ($nama == 'BRIPKA Gandi Ari Setioko, Amd.Kep / NRP 89100114') {
             return url('assets/img/pGandi.png');
         }
+        elseif ($nama == 'BRIPDA Dwiki Maulana Abdullah, A.md.Kep / NRP 97110966') {
+            return url('assets/img/pGandi.png');
+        }
     }
 @endphp
