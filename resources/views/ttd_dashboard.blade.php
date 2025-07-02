@@ -92,7 +92,7 @@
                         <label for="SelectYangTTD" class="form-label">Menandatangani</label>
                         <select name="ttd" class="form-select" aria-label="Pilih yang TTD" id="SelectYangTTD">
                             <option selected>Pilih yang menandatangani</option>
-                            <option value="AKBP dr. Ananingati, Sp.OG(K) / NRP 71100512">AKBP dr. Ananingati, Sp.OG(K) /
+                            <option value="AKBP Dr. dr. ANANINGATI, Sp.OG(K), Subsp.Obginsos / NRP 71100512">AKBP Dr. dr. ANANINGATI, Sp.OG(K), Subsp.Obginsos /
                                 NRP 71100512</option>
                             <option value="Kompol Arif Dian Aprianto, AMD.Kep., S.H. / NRP 81040450">Kompol Arif Dian
                                 Aprianto, AMD.Kep., S.H. / NRP 81040450</option>

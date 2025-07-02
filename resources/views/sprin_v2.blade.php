@@ -43,6 +43,9 @@
         elseif ($nama == 'AKBP dr. Ananingati, Sp.OG(K) / NRP 71100512') {
             return url('assets/img/TTD_STEMPEL_DR_ANANING.png');
         }
+        elseif ($nama == 'AKBP Dr. dr. ANANINGATI, Sp.OG(K), Subsp.Obginsos / NRP 71100512') {
+            return url('assets/img/TTD_STEMPEL_DR_ANANING.png');
+        }
         elseif ($nama == 'AKP Dodik Bintoro, S.Psi / NRP 78090637') {
             return url('assets/img/pDodik.png');
         }
