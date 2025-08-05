@@ -40,6 +40,9 @@
         if ($nama == 'Kompol Arif Dian Aprianto, AMD.Kep., S.H. / NRP 81040450') {
             return url('assets/img/TTD_STEMPEL_PAK_ARIF.png');
         }
+        elseif ($nama == 'PEMBINA drg. Akhmadi Prabowo, MMRS / NIP 197906192005011004') {
+            return url('assets/img/TTD_PAK_ACHMADI.png');
+        }
         elseif ($nama == 'AKBP dr. Ananingati, Sp.OG(K) / NRP 71100512') {
             return url('assets/img/TTD_STEMPEL_DR_ANANING.png');
         }

@@ -92,10 +92,13 @@
                         <label for="SelectYangTTD" class="form-label">Menandatangani</label>
                         <select name="ttd" class="form-select" aria-label="Pilih yang TTD" id="SelectYangTTD">
                             <option selected>Pilih yang menandatangani</option>
-                            <option value="AKBP Dr. dr. ANANINGATI, Sp.OG(K), Subsp.Obginsos / NRP 71100512">AKBP Dr. dr. ANANINGATI, Sp.OG(K), Subsp.Obginsos /
+                            <option value="AKBP Dr. dr. ANANINGATI, Sp.OG(K), Subsp.Obginsos / NRP 71100512">AKBP Dr.
+                                dr. ANANINGATI, Sp.OG(K), Subsp.Obginsos /
                                 NRP 71100512</option>
-                            <option value="Kompol Arif Dian Aprianto, AMD.Kep., S.H. / NRP 81040450">Kompol Arif Dian
-                                Aprianto, AMD.Kep., S.H. / NRP 81040450</option>
+                            {{-- <option value="Kompol Arif Dian Aprianto, AMD.Kep., S.H. / NRP 81040450">Kompol Arif Dian
+                                Aprianto, AMD.Kep., S.H. / NRP 81040450</option> --}}
+                            <option value="PEMBINA drg. Akhmadi Prabowo, MMRS / NIP 197906192005011004">PEMBINA drg.
+                                Akhmadi Prabowo, MMRS / NIP 197906192005011004</option>
                             <option value="AKP Dodik Bintoro, S.Psi / NRP 78090637">AKP Dodik Bintoro, S.Psi / NRP
                                 78090637</option>
                             <option value="IPTU dr. Arifian Juari, Sp.OG(K) / NRP 84071828">IPTU dr. Arifian Juari,
@@ -104,7 +107,8 @@
                             </option>
                             <option value="BRIPKA Gandi Ari Setioko, Amd.Kep / NRP 89100114">BRIPKA Gandi Ari Setioko,
                                 Amd.Kep / NRP 89100114</option>
-                            <option value="BRIPDA Dwiki Maulana Abdullah, A.md.Kep / NRP 97110966">BRIPDA Dwiki Maulana Abdullah, A.md.Kep / NRP 97110966</option>
+                            <option value="BRIPDA Dwiki Maulana Abdullah, A.md.Kep / NRP 97110966">BRIPDA Dwiki Maulana
+                                Abdullah, A.md.Kep / NRP 97110966</option>
                         </select>
                     </div>
                     <div class="mb-3 col-3">
